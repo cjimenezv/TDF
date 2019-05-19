@@ -1,0 +1,102 @@
+<div class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1 ml-auto">
+          <p class="description">&nbsp;</p>
+        </div>
+        <div class="col-md-11 mr-auto">
+            <div class="card card-signup text-center">
+                <div class="card-header ">
+                  <h4 class="card-title">Solicitud de cr&#233;dito</h4>
+                </div>
+                <div class="card-body ">
+                    <form [formGroup]="formaSolicitud" (ngSubmit)="enviarDatos()">
+                        <!--FILA 1-->
+                        <div class="row">
+                            <div class="col-md-8 pl-1">
+                                <div class="form-group">
+                                  <label>Tipo de Identificaci&#243;n</label>
+                                  <div class="form-check form-check-radio">
+                                      <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1" checked [(ngModel)]="solicitud.tipoIdentificacion" name="tipoIdentificacion" />
+                                        <span class="form-check-sign"></span> C&#233;dula de Ciudadan&#237;a
+                                      </label>
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="2" [(ngModel)]="solicitud.tipoIdentificacion" name="tipoIdentificacion"/>
+                                          <span class="form-check-sign"></span> C&#233;dula de extranjer&#237;a
+                                      </label>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                              <div class="form-group">
+                                <label>N&#250;mero de documento</label>
+                                <input type="text" class="form-control"   placeholder="N&#250;mero de documento..." [(ngModel)]="solicitud.numeroIdentificacion" name="numeroIdentificacion" />
+                              </div>
+                            </div>
+                          </div>
+                          <!--FIN FILA 1-->
+                        <!--FILA 2-->
+                        <div class="row">
+                            <div class="col-md-6 pr-1">
+                              <div class="form-group">
+                                <label>Nombres</label>
+                                <input type="text" class="form-control" placeholder="Nombres..." [(ngModel)]="solicitud.nombres" name="nombres"/>
+                              </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                              <div class="form-group">
+                                <label>Apellidos</label>
+                                <input type="text" class="form-control" placeholder="Apellidos..." [(ngModel)]="solicitud.apellidos" name="apellidos" />
+                              </div>
+                            </div>
+                        </div>
+                        <!--FIN FILA 2-->
+                        <!--FILA 3-->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                  <label>Ciudad</label>
+                                  <input  type="text" class="form-control"  placeholder="Ciudad..."  [(ngModel)]="solicitud.ciudad" name="ciudad"/>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                              <div class="form-group">
+                                <label>Direcci&#243;n</label>
+                                <input  type="text" class="form-control"  placeholder="Direcci&#243;n..."  [(ngModel)]="solicitud.direccion" name="direccion"/>
+                              </div>
+                            </div>
+                        </div>
+                        <!--FIN FILA 3-->
+                        <!--FILA 4-->
+                        <div class="row">
+                           <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">Correo electr&#243;nico</label>
+                                  <input type="email"  class="form-control" placeholder="Correo electr&#243;nico..." [(ngModel)]="solicitud.email" name="email" />
+                                </div>
+                           </div>
+                           <div class="col-md-3 pr-1">
+                              <div class="form-group">
+                                <label>Celular</label>
+                                <input type="text" class="form-control" placeholder="Celular..." [(ngModel)]="solicitud.celular" name="celular" />
+                              </div>
+                          </div>
+                          <div class="col-md-3 px-1">
+                              <div class="form-group">
+                                <label>Tel&#233;fono</label>
+                                <input type="text" class="form-control" placeholder="Tel&#233;fono..." [(ngModel)]="solicitud.telefono" name="telefono" />
+                              </div>
+                          </div>
+                        </div>
+                        <!--FIN FILA 4-->
+                        <button type="submit" (click)="verificarAmbiente()" class="btn btn-primary btn-round btn-lg" [disabled]="formaSolicitud.form.invalid">Registrar Solicitud</button>
+                      </form>
+                </div>
+                <div class="card-footer">
+                </div>
+              </div>            
+        </div>
+     </div>
+  </div>
+  

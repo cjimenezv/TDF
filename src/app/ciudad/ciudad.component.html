@@ -1,0 +1,20 @@
+<h1>Ciudades de Colombia - DIVIPOLA </h1>
+
+<br>
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Codigo Departamento</th>
+        <th scope="col">Codigo Municipio</th>
+        <th scope="col">Departamento</th>
+        <th scope="col">Municipio</th>
+      </tr>
+    </thead>
+  <tr *ngFor="let ciudad of listaCiudades" >
+    <td>{{ ciudad.cod_depto }}</td>
+    <td>{{ ciudad.cod_mpio }}</td>
+    <td>{{ ciudad.dpto }}</td>
+    <td>{{ ciudad.nom_mpio }}</td>
+  </tr>
+</table>
