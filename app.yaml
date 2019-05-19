@@ -1,13 +1,15 @@
-# [START runtime]
-runtime: python27
-threadsafe: yes
-# [END runtime]
-handlers:
-- url: /(.+)
-  static_files: dist/\1
-  upload: dist/(.*)
-- url: /
-  static_files: dist/index.html
-  upload: dist/index.html
-skip_files:
-- ^(?!dist)  # Skip any files not in the dist folder
+runtime: nodejs
+env: flex
+
+# This sample incurs costs to run on the App Engine flexible environment. 
+# The settings below are to reduce costs during testing and are not appropriate
+# for production use. For more information, see:
+# https://cloud.google.com/appengine/docs/flexible/nodejs/configuring-your-app-with-app-yaml
+env_variables:
+  API_KEY: AIzaSyAsJYWuYNJKp9y1d2sTZZP5fXZYAe3qm7s
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
